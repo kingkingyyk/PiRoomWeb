@@ -1,0 +1,3 @@
+# Module piroomweb
+# RPC service class, partial path of RPC policy file
+com.king.piroom.web.client.GreetingService, 8A75DD8ECECB016B4A2C59A35E035506.gwt.rpc

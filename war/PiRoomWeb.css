@@ -1,0 +1,124 @@
+/** Add css rules here for your application. */
+
+.title {
+	color: black;
+	height: 50px;
+	width : 103%;
+	margin: -20px -20px 20px;
+	line-height: 70px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color : #ecf0f1;
+}
+
+.titleText {
+	font-family: 'Oswald', sans-serif;
+	font-size: 2em;
+	font-weight: bold;
+	margin-top: 20px;
+	margin-left: 40px;
+	color: black;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.tilePanel {
+	background-color: orange;
+	height: 150px;
+	width : 125px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.tilePanelText {
+	font-family: 'Gloria Hallelujah', cursive;
+	color: white;
+	text-align: center;
+	width: 125px;
+	margin-top: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.tilePanelIcon {
+	height: 80px;
+	width: 80px;
+	margin-top: 20px;
+	margin-left: 25px;
+}
+
+.tilePanelSubtext {
+	font-family: 'Oswald', sans-serif;
+	color: white;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 20px;
+}
+
+.chartPanel {
+	align: center;
+	background-color: #3498db;
+	margin-bottom: 20px;
+	height: 150px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.chartPanelTitle {
+	font-family: 'Gloria Hallelujah', cursive;
+	color: white;
+	text-align: center;
+	width: 100px;
+	margin-left: 10px;
+	margin-top: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.chart {
+	height: 120px;
+	width: 300px;
+	float: left;
+}
+
+.tilePanelLarge {
+	height: 150px;
+	width : 560px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.tilePanelSliderTitle {
+	font-family: 'Gloria Hallelujah', cursive;
+	height: 30px;
+	width : 100px;
+	color: white;
+	margin-right: 20px;
+	margin-top: 25px; 
+	text-align: right;
+	vertical-align: middle;
+}
+
+.tilePanelSlider {
+	height: 1px;
+	width : 200px;
+	margin-top: 30px; 
+	margin-right: 10px;
+}
+
+.tilePanelSliderValue {
+	font-family: 'Gloria Hallelujah', cursive;
+	height: 30px;
+	width : 80px;
+	color: white;
+	margin-top: 25px; 
+	text-align: left;
+	vertical-align: middle;
+}
+
+/** Most GWT widgets already have a style name defined */
+.gwt-DialogBox {
+  width: 400px;
+}
+
+.serverResponseLabelError {
+  color: red;
+}

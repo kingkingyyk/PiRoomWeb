@@ -1,0 +1,2 @@
+serviceClass: com.king.piroom.web.client.GreetingService
+path: 8A75DD8ECECB016B4A2C59A35E035506.gwt.rpc
