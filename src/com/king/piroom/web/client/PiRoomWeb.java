@@ -1,7 +1,5 @@
 package com.king.piroom.web.client;
 
-import java.util.ArrayList;
-
 import org.moxieapps.gwt.highcharts.client.Chart;
 
 import com.google.gwt.core.client.EntryPoint;
@@ -33,12 +31,13 @@ public class PiRoomWeb implements EntryPoint {
 	private static final String LightOnIconImg="images/light-on.png";
 	private static final String LightOffIconImg="images/light-off.png";
 	
-	private static final int LoadingDelay=1500;
 	private final GreetingServiceAsync serverService = GWT.create(GreetingService.class);
 	
 	private Label lblControlMode;
 	private Image lblControlModeIcon;
 	private boolean controlModeAuto;
+	
+	private Label lblControlCountdown;
 	
 	private Chart ChartPiTemperature;
 	private Chart ChartMotion;
@@ -89,10 +88,28 @@ public class PiRoomWeb implements EntryPoint {
 					ctrlPanelInternal.add(lblControlModeIcon);
 				ctrlPanel.add(ctrlPanelInternal);
 			topPanel.add(ctrlPanel);
+			
+			HorizontalPanel ctrlCountdownPanel=new HorizontalPanel();
+			ctrlCountdownPanel.setStyleName("tilePanel");
+			ctrlCountdownPanel.getElement().getStyle().setBackgroundColor("#e74c3c");
+				VerticalPanel ctrlCountdownPanelInternal=new VerticalPanel();
+						Label lblControlCDTitle=new Label("Control Countdown");
+						lblControlCDTitle.setStyleName("tilePanelText");
+					
+						lblControlCountdown=new Label("N/A");
+						lblControlCountdown.setStyleName("tilePanelSubtext");
+						lblControlCountdown.getElement().getStyle().setTextAlign(TextAlign.CENTER);
+						lblControlCountdown.getElement().getStyle().setMarginTop(10,Unit.PX);
+						lblControlCountdown.getElement().getStyle().setFontSize(60,Unit.PX);
+						
+					ctrlCountdownPanelInternal.add(lblControlCDTitle);
+					ctrlCountdownPanelInternal.add(lblControlCountdown);
+				ctrlCountdownPanel.add(ctrlCountdownPanelInternal);
+			topPanel.add(ctrlCountdownPanel);
 				
 			HorizontalPanel ctrlPanelPiTemp=new HorizontalPanel();
 			ctrlPanelPiTemp.setStyleName("tilePanel");
-			ctrlPanelPiTemp.getElement().getStyle().setBackgroundColor("#f1c40f");
+			ctrlPanelPiTemp.getElement().getStyle().setBackgroundColor("#7f8c8d");
 				VerticalPanel ctrlPanelPiTempInternal=new VerticalPanel();
 					Label lblPiTemp=new Label("Pi's Temperature: ");
 						lblPiTemp.setStyleName("tilePanelText");
@@ -114,8 +131,8 @@ public class PiRoomWeb implements EntryPoint {
 						lblPiStatusTitle.setStyleName("tilePanelText");
 						
 					Grid g=new Grid(2,2);
-						g.getElement().getStyle().setMarginTop(30,Unit.PX);
-						g.getElement().getStyle().setMarginLeft(25,Unit.PX);
+						g.getElement().getStyle().setMarginTop(20,Unit.PX);
+						g.getElement().getStyle().setMarginLeft(20,Unit.PX);
 						
 						Label lblPiStatusClockSpeed=new Label("Clock Speed :");
 							lblPiStatusClockSpeed.setStyleName("tilePanelSubtext");
@@ -214,7 +231,7 @@ public class PiRoomWeb implements EntryPoint {
 					Label lblfanPanelControlTemperature=new Label("Temperature :");
 						lblfanPanelControlTemperature.setStyleName("tilePanelSliderTitle");
 					
-					fanAutoTemperatureSlider=new Slider("FanTemperature",0,10000,new int [1]);
+					fanAutoTemperatureSlider=new Slider("FanTemperature",0,3000,new int [1]);
 						fanAutoTemperatureSlider.setStyleName("tilePanelSlider");
 						fanPanelControl.add(fanAutoTemperatureSlider);
 					
@@ -264,7 +281,7 @@ public class PiRoomWeb implements EntryPoint {
 					Label lbllightPanelControlLight=new Label("Light :");
 						lbllightPanelControlLight.setStyleName("tilePanelSliderTitle");
 					
-					lightAutoLightSlider=new Slider("LightLight",0,10000,new int [1]);
+					lightAutoLightSlider=new Slider("LightLight",0,500,new int [1]);
 						lightAutoLightSlider.setStyleName("tilePanelSlider");
 						lightPanelControl.add(lightAutoLightSlider);
 					
@@ -284,15 +301,6 @@ public class PiRoomWeb implements EntryPoint {
 	
 	public void initData() {
 		//======================== Control Mode
-		serverService.getAutomationStatus(new AsyncCallback<Boolean>() {
-			@Override public void onFailure(Throwable caught) { }
-			@Override
-			public void onSuccess(Boolean result) {
-				controlModeAuto=result;
-				if (controlModeAuto) lblControlModeIcon.setUrl(AutoIconImg);
-				else lblControlModeIcon.setUrl(ManualIconImg);
-			}
-		});
 		lblControlModeIcon.addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
@@ -304,16 +312,6 @@ public class PiRoomWeb implements EntryPoint {
 			}
 		});
 		//========================= Fan
-		serverService.getFanStatus(new AsyncCallback<Boolean>() {
-			@Override
-			public void onFailure(Throwable caught) {}
-			@Override
-			public void onSuccess(Boolean result) {
-				fanStatus=result;
-				if (fanStatus) lblFanControlIcon.setUrl(FanOnIconImg);
-				else lblFanControlIcon.setUrl(FanOffIconImg);
-			}
-		});
 		lblFanControlIcon.addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
@@ -383,17 +381,6 @@ public class PiRoomWeb implements EntryPoint {
 			}
 		});
 		//========================== Light
-		serverService.getLightStatus(new AsyncCallback<Boolean>() {
-			@Override
-			public void onFailure(Throwable caught) {
-			}
-			@Override
-			public void onSuccess(Boolean result) {
-				lightStatus=result;
-				if (lightStatus) lblLightControlIcon.setUrl(LightOnIconImg);
-				else lblLightControlIcon.setUrl(LightOffIconImg);
-			}
-		});
 		lblLightControlIcon.addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
@@ -473,23 +460,8 @@ public class PiRoomWeb implements EntryPoint {
 			//btnLightControl.setEnabled(true);
 		}
 		serverService.setAutomationStatus(controlModeAuto, new AsyncCallback<Void>() {
-			private void restore() {
-				Timer t=new Timer() {
-					public void run () {
-						if (controlModeAuto) lblControlModeIcon.setUrl(AutoIconImg);
-						else lblControlModeIcon.setUrl(ManualIconImg);
-					}
-				};
-				t.schedule(LoadingDelay);
-			}
-			@Override
-			public void onFailure(Throwable caught) {
-				restore();
-			}
-			@Override
-			public void onSuccess(Void result) {
-				restore();
-			}
+			@Override public void onFailure(Throwable caught) {}
+			@Override public void onSuccess(Void result) {}
 		});
 	}
 	
@@ -504,12 +476,27 @@ public class PiRoomWeb implements EntryPoint {
 
 					@Override
 					public void onSuccess(Double [] result) {
-						ChartPiTemperature.getSeries()[0].getPoints()[0].update(Utility.round(result[0]));
-						lblPiClockSpeed.setText(result[1]+" MHz");
-						lblPiMemoryUsage.setText(NumberFormat.getFormat("0.00").format(result[2])+" %");
-						ChartMotion.getSeries()[0].getPoints()[0].update(Utility.round(result[3]));
-						ChartLight.getSeries()[0].getPoints()[0].update(Utility.round(result[4]));
-						ChartTemperature.getSeries()[0].getPoints()[0].update(Utility.round(result[5]));
+						controlModeAuto=(result[0]==1);
+						if (controlModeAuto) lblControlModeIcon.setUrl(AutoIconImg);
+						else lblControlModeIcon.setUrl(ManualIconImg);
+						
+						if (controlModeAuto) lblControlCountdown.setText(result[1]+"");
+						else lblControlCountdown.setText("N/A");
+						
+						fanStatus=(result[2]==1);
+						if (fanStatus) lblFanControlIcon.setUrl(FanOnIconImg);
+						else lblFanControlIcon.setUrl(FanOffIconImg);
+						
+						lightStatus=(result[3]==1);
+						if (lightStatus) lblLightControlIcon.setUrl(LightOnIconImg);
+						else lblLightControlIcon.setUrl(LightOffIconImg);
+						
+						ChartPiTemperature.getSeries()[0].getPoints()[0].update(Utility.round(result[4]));
+						lblPiClockSpeed.setText(result[5]+" MHz");
+						lblPiMemoryUsage.setText(NumberFormat.getFormat("0.00").format(result[6])+" %");
+						ChartMotion.getSeries()[0].getPoints()[0].update(Utility.round(result[7]));
+						ChartLight.getSeries()[0].getPoints()[0].update(Utility.round(result[8]));
+						ChartTemperature.getSeries()[0].getPoints()[0].update(Utility.round(result[9]));
 					}
 					
 				});
@@ -520,46 +507,20 @@ public class PiRoomWeb implements EntryPoint {
 	}
 	
 	public void controlFan() {
-		serverService.setFanStatus(fanStatus, new AsyncCallback<Void>() {
-			private void restore() {
-				Timer t=new Timer() {
-					public void run () {
-						if (fanStatus) lblFanControlIcon.setUrl(FanOnIconImg);
-						else lblFanControlIcon.setUrl(FanOffIconImg);
-					}
-				};
-				t.schedule(LoadingDelay);
-			}
-			@Override
-			public void onFailure(Throwable caught) {
-				restore();
-			}
-			@Override
-			public void onSuccess(Void result) {
-				restore();
-			}
-		});
+		if (!controlModeAuto) {
+			serverService.setFanStatus(fanStatus, new AsyncCallback<Void>() {
+				@Override public void onFailure(Throwable caught) {}
+				@Override public void onSuccess(Void result) {}
+			});
+		}
 	}
 	
 	public void controlLight() {
-		serverService.setLightStatus(lightStatus, new AsyncCallback<Void>() {
-			private void restore() {
-				Timer t=new Timer() {
-					public void run () {
-						if (lightStatus) lblLightControlIcon.setUrl(LightOnIconImg);
-						else lblLightControlIcon.setUrl(LightOffIconImg);
-					}
-				};
-				t.schedule(LoadingDelay);
-			}
-			@Override
-			public void onFailure(Throwable caught) {
-				restore();
-			}
-			@Override
-			public void onSuccess(Void result) {
-				restore();
-			}
-		});
+		if (!controlModeAuto) {
+			serverService.setLightStatus(lightStatus, new AsyncCallback<Void>() {
+				@Override public void onFailure(Throwable caught) {}
+				@Override public void onSuccess(Void result) {}
+			});
+		}
 	}
 }
