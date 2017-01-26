@@ -616,8 +616,8 @@ sk,com.google.gwt.lang.ClassLiteralHolder::Lcom_king_piroom_web_client_PiRoomWeb
 tk,com.google.gwt.lang.ClassLiteralHolder::Lcom_king_piroom_web_client_PiRoomWeb$12_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_king_piroom_web_client_PiRoomWeb$12_2_classLit,com/king/piroom/web/client/PiRoomWeb.java,462,-1
 uk,com.google.gwt.lang.ClassLiteralHolder::Lcom_king_piroom_web_client_PiRoomWeb$13$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_king_piroom_web_client_PiRoomWeb$13$1_2_classLit,com/king/piroom/web/client/PiRoomWeb.java,473,-1
 vk,com.google.gwt.lang.ClassLiteralHolder::Lcom_king_piroom_web_client_PiRoomWeb$13_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_king_piroom_web_client_PiRoomWeb$13_2_classLit,com/king/piroom/web/client/PiRoomWeb.java,469,-1
-wk,com.google.gwt.lang.ClassLiteralHolder::Lcom_king_piroom_web_client_PiRoomWeb$14_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_king_piroom_web_client_PiRoomWeb$14_2_classLit,com/king/piroom/web/client/PiRoomWeb.java,511,-1
-xk,com.google.gwt.lang.ClassLiteralHolder::Lcom_king_piroom_web_client_PiRoomWeb$15_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_king_piroom_web_client_PiRoomWeb$15_2_classLit,com/king/piroom/web/client/PiRoomWeb.java,520,-1
+wk,com.google.gwt.lang.ClassLiteralHolder::Lcom_king_piroom_web_client_PiRoomWeb$14_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_king_piroom_web_client_PiRoomWeb$14_2_classLit,com/king/piroom/web/client/PiRoomWeb.java,510,-1
+xk,com.google.gwt.lang.ClassLiteralHolder::Lcom_king_piroom_web_client_PiRoomWeb$15_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_king_piroom_web_client_PiRoomWeb$15_2_classLit,com/king/piroom/web/client/PiRoomWeb.java,517,-1
 yk,com.google.gwt.lang.ClassLiteralHolder::Lcom_king_piroom_web_client_PiRoomWeb$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_king_piroom_web_client_PiRoomWeb$1_2_classLit,com/king/piroom/web/client/PiRoomWeb.java,304,-1
 zk,com.google.gwt.lang.ClassLiteralHolder::Lcom_king_piroom_web_client_PiRoomWeb$2_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_king_piroom_web_client_PiRoomWeb$2_2_classLit,com/king/piroom/web/client/PiRoomWeb.java,315,-1
 Ak,com.google.gwt.lang.ClassLiteralHolder::Lcom_king_piroom_web_client_PiRoomWeb$3_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_king_piroom_web_client_PiRoomWeb$3_2_classLit,com/king/piroom/web/client/PiRoomWeb.java,325,-1
@@ -1333,7 +1333,7 @@ St,com.king.piroom.web.client.GreetingService_TypeSerializer::GreetingService_Ty
 Qt,com.king.piroom.web.client.GreetingService_TypeSerializer::methodMapNative,com.king.piroom.web.client.GreetingService_TypeSerializer,methodMapNative,gen/com/king/piroom/web/client/GreetingService_TypeSerializer.java,11,-1
 PiRoomWeb,,com.king.piroom.web.client.PiRoomWeb,,com/king/piroom/web/client/PiRoomWeb.java,24,-1
 Tt,com.king.piroom.web.client.PiRoomWeb::$controlFan(Lcom/king/piroom/web/client/PiRoomWeb;)V,com.king.piroom.web.client.PiRoomWeb,$controlFan,com/king/piroom/web/client/PiRoomWeb.java,509,0
-Ut,com.king.piroom.web.client.PiRoomWeb::$controlLight(Lcom/king/piroom/web/client/PiRoomWeb;)V,com.king.piroom.web.client.PiRoomWeb,$controlLight,com/king/piroom/web/client/PiRoomWeb.java,518,0
+Ut,com.king.piroom.web.client.PiRoomWeb::$controlLight(Lcom/king/piroom/web/client/PiRoomWeb;)V,com.king.piroom.web.client.PiRoomWeb,$controlLight,com/king/piroom/web/client/PiRoomWeb.java,516,0
 Vt,com.king.piroom.web.client.PiRoomWeb::$onModuleLoad(Lcom/king/piroom/web/client/PiRoomWeb;)V,com.king.piroom.web.client.PiRoomWeb,$onModuleLoad,com/king/piroom/web/client/PiRoomWeb.java,67,0
 Wt,com.king.piroom.web.client.PiRoomWeb::$setControlMode(Lcom/king/piroom/web/client/PiRoomWeb;)V,com.king.piroom.web.client.PiRoomWeb,$setControlMode,com/king/piroom/web/client/PiRoomWeb.java,454,0
 a,com.king.piroom.web.client.PiRoomWeb::ChartLight,com.king.piroom.web.client.PiRoomWeb,ChartLight,com/king/piroom/web/client/PiRoomWeb.java,44,-1
@@ -1395,14 +1395,14 @@ qu,com.king.piroom.web.client.PiRoomWeb$13$1::PiRoomWeb$13$1(Lcom/king/piroom/we
 ru,com.king.piroom.web.client.PiRoomWeb$13$1::onFailure(Ljava/lang/Throwable;)V,com.king.piroom.web.client.PiRoomWeb$13$1,onFailure,com/king/piroom/web/client/PiRoomWeb.java,475,0
 su,com.king.piroom.web.client.PiRoomWeb$13$1::onSuccess(Ljava/lang/Object;)V,com.king.piroom.web.client.PiRoomWeb$13$1,onSuccess,com/king/piroom/web/client/PiRoomWeb.java,478,0
 a,com.king.piroom.web.client.PiRoomWeb$13$1::this$11,com.king.piroom.web.client.PiRoomWeb$13$1,this$11,com/king/piroom/web/client/PiRoomWeb.java,473,-1
-PiRoomWeb$14,,com.king.piroom.web.client.PiRoomWeb$14,,com/king/piroom/web/client/PiRoomWeb.java,511,-1
-tu,com.king.piroom.web.client.PiRoomWeb$14::PiRoomWeb$14(Lcom/king/piroom/web/client/PiRoomWeb;) <init>,com.king.piroom.web.client.PiRoomWeb$14,PiRoomWeb$14,com/king/piroom/web/client/PiRoomWeb.java,511,0
-uu,com.king.piroom.web.client.PiRoomWeb$14::onFailure(Ljava/lang/Throwable;)V,com.king.piroom.web.client.PiRoomWeb$14,onFailure,com/king/piroom/web/client/PiRoomWeb.java,512,0
-vu,com.king.piroom.web.client.PiRoomWeb$14::onSuccess(Ljava/lang/Object;)V,com.king.piroom.web.client.PiRoomWeb$14,onSuccess,com/king/piroom/web/client/PiRoomWeb.java,513,0
-PiRoomWeb$15,,com.king.piroom.web.client.PiRoomWeb$15,,com/king/piroom/web/client/PiRoomWeb.java,520,-1
-wu,com.king.piroom.web.client.PiRoomWeb$15::PiRoomWeb$15(Lcom/king/piroom/web/client/PiRoomWeb;) <init>,com.king.piroom.web.client.PiRoomWeb$15,PiRoomWeb$15,com/king/piroom/web/client/PiRoomWeb.java,520,0
-xu,com.king.piroom.web.client.PiRoomWeb$15::onFailure(Ljava/lang/Throwable;)V,com.king.piroom.web.client.PiRoomWeb$15,onFailure,com/king/piroom/web/client/PiRoomWeb.java,521,0
-yu,com.king.piroom.web.client.PiRoomWeb$15::onSuccess(Ljava/lang/Object;)V,com.king.piroom.web.client.PiRoomWeb$15,onSuccess,com/king/piroom/web/client/PiRoomWeb.java,522,0
+PiRoomWeb$14,,com.king.piroom.web.client.PiRoomWeb$14,,com/king/piroom/web/client/PiRoomWeb.java,510,-1
+tu,com.king.piroom.web.client.PiRoomWeb$14::PiRoomWeb$14(Lcom/king/piroom/web/client/PiRoomWeb;) <init>,com.king.piroom.web.client.PiRoomWeb$14,PiRoomWeb$14,com/king/piroom/web/client/PiRoomWeb.java,510,0
+uu,com.king.piroom.web.client.PiRoomWeb$14::onFailure(Ljava/lang/Throwable;)V,com.king.piroom.web.client.PiRoomWeb$14,onFailure,com/king/piroom/web/client/PiRoomWeb.java,511,0
+vu,com.king.piroom.web.client.PiRoomWeb$14::onSuccess(Ljava/lang/Object;)V,com.king.piroom.web.client.PiRoomWeb$14,onSuccess,com/king/piroom/web/client/PiRoomWeb.java,512,0
+PiRoomWeb$15,,com.king.piroom.web.client.PiRoomWeb$15,,com/king/piroom/web/client/PiRoomWeb.java,517,-1
+wu,com.king.piroom.web.client.PiRoomWeb$15::PiRoomWeb$15(Lcom/king/piroom/web/client/PiRoomWeb;) <init>,com.king.piroom.web.client.PiRoomWeb$15,PiRoomWeb$15,com/king/piroom/web/client/PiRoomWeb.java,517,0
+xu,com.king.piroom.web.client.PiRoomWeb$15::onFailure(Ljava/lang/Throwable;)V,com.king.piroom.web.client.PiRoomWeb$15,onFailure,com/king/piroom/web/client/PiRoomWeb.java,518,0
+yu,com.king.piroom.web.client.PiRoomWeb$15::onSuccess(Ljava/lang/Object;)V,com.king.piroom.web.client.PiRoomWeb$15,onSuccess,com/king/piroom/web/client/PiRoomWeb.java,519,0
 PiRoomWeb$2,,com.king.piroom.web.client.PiRoomWeb$2,,com/king/piroom/web/client/PiRoomWeb.java,315,-1
 zu,com.king.piroom.web.client.PiRoomWeb$2::PiRoomWeb$2(Lcom/king/piroom/web/client/PiRoomWeb;) <init>,com.king.piroom.web.client.PiRoomWeb$2,PiRoomWeb$2,com/king/piroom/web/client/PiRoomWeb.java,315,0
 Au,com.king.piroom.web.client.PiRoomWeb$2::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,com.king.piroom.web.client.PiRoomWeb$2,onClick,com/king/piroom/web/client/PiRoomWeb.java,317,0

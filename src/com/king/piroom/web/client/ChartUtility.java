@@ -66,7 +66,7 @@ public class ChartUtility {
 		series.setName("Value");
 		series.addPoint(0.0);
 		series.setToolTip(new ToolTip().setValueSuffix(unit).setEnabled(true));
-		series.setOption("/dataLabels/format", "<div style=\"text-align:center;border-width:0\"><span style=\"font-size:25px;color:'white')><br/><br/>{y} "+unit+"</div>");
+		series.setOption("/dataLabels/format", "<div style=\"text-align:center;border-width:0\"><span style=\"font-size:25px;color:'white';font-family:'Oswald', sans-serif\")><br/><br/>{y} "+unit+"</div>");
 		series.setOption("/dial/backgroundColor", "white");
 		c.addSeries(series);
 		return c;

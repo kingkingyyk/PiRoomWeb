@@ -93,7 +93,7 @@ public class PiRoomWeb implements EntryPoint {
 			ctrlCountdownPanel.setStyleName("tilePanel");
 			ctrlCountdownPanel.getElement().getStyle().setBackgroundColor("#e74c3c");
 				VerticalPanel ctrlCountdownPanelInternal=new VerticalPanel();
-						Label lblControlCDTitle=new Label("Control Countdown");
+						Label lblControlCDTitle=new Label("Automation Timer");
 						lblControlCDTitle.setStyleName("tilePanelText");
 					
 						lblControlCountdown=new Label("N/A");
@@ -507,20 +507,16 @@ public class PiRoomWeb implements EntryPoint {
 	}
 	
 	public void controlFan() {
-		if (!controlModeAuto) {
-			serverService.setFanStatus(fanStatus, new AsyncCallback<Void>() {
+		serverService.setFanStatus(fanStatus, new AsyncCallback<Void>() {
 				@Override public void onFailure(Throwable caught) {}
 				@Override public void onSuccess(Void result) {}
-			});
-		}
+		});
 	}
 	
 	public void controlLight() {
-		if (!controlModeAuto) {
-			serverService.setLightStatus(lightStatus, new AsyncCallback<Void>() {
-				@Override public void onFailure(Throwable caught) {}
-				@Override public void onSuccess(Void result) {}
-			});
-		}
+		serverService.setLightStatus(lightStatus, new AsyncCallback<Void>() {
+			@Override public void onFailure(Throwable caught) {}
+			@Override public void onSuccess(Void result) {}
+		});
 	}
 }
